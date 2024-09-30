@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3"> 
+      <h3>Select Vehicle</h3>
+      <select class="form-select" id="vehicleSelect">
+        <option selected>Choose a vehicle</option>
+        {% for vehicle in vehicles %}
+          <option value="{{ vehicle.id }}">{{ vehicle.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-9">
+      <div id="map" style="height: 400px;"></div> 
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <h3>Vehicle Details</h3>
+      <div id="vehicleDetails">
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Initialize the map (replace with your actual map initialization code)
+  var map = L.map('map').setView([51.505, -0.09], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Handle vehicle selection (replace with your actual logic)
+  document.getElementById('vehicleSelect').addEventListener('change', function() {
+    var selectedVehicleId = this.value;
+    // Fetch and display vehicle details based on selectedVehicleId
+  });
+</script>
+
+{% endblock content %}
