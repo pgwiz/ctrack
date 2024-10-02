@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5" style="color: white">
+    <h1>C-Truck Documentation</h1>
+
+    <h2>Adding Vehicle Data</h2>
+    <p>To add a new vehicle to the system, follow these steps:</p>
+    <ol>
+        <li>Go to the "Register Vehicle" page.</li>
+        <li>Fill out the registration form with the required vehicle information.</li>
+        <li>Click the "Register Vehicle" button to submit the form.</li>
+        <li>You'll be redirected to the "Track" page with a success message if the registration is successful.</li>
+    </ol>
+
+    <h2>Deleting Vehicle Data</h2>
+    <p>To delete vehicle data, you have two options:</p>
+    <h3>Option 1: Using the Django Admin Interface</h3>
+    <ol>
+        <li>Log in to the Django admin interface.</li>
+        <li>Go to the "Vehicles" section.</li>
+        <li>Select the vehicle(s) you want to delete.</li>
+        <li>Click the "Delete selected vehicles" button.</li>
+    </ol>
+    <h3>Option 2: Using the "Manage Vehicles" Page</h3>
+    <ol>
+        <li>Go to the "Manage Vehicles" page.</li>
+        <li>Find the vehicle you want to delete in the table.</li>
+        <li>Click the "Delete" button next to the vehicle.</li>
+        <li>Confirm the deletion when prompted.</li>
+    </ol>
+
+    <h2>Other Important Information</h2>
+    <p>Here are some other things to keep in mind:</p>
+    <ul>
+        <li>Make sure you're logged in to perform any data management operations.</li>
+        <li>Always back up your data before performing any deletions.</li>
+        <li>If you encounter any issues, check the Django server logs for error messages.</li>
+    </ul>
+</div>
+
+{% endblock content %}

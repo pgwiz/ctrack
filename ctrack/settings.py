@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'car_tracker_app', # Add this line
+    'car_tracker_app',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#AUTH_USER_MODEL = 'car_tracker_app.CustomUser'  # Replace 'car_tracker_app' with the correct app name
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

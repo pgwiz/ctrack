@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <h2>Track Vehicle</h2>
+  <div id="map" style="height: 400px;"></div>
+
+  <script>
+    // Initialize the map (replace with your actual map initialization code)
+    var map = L.map('map').setView([0, 0], 13); // Initial view centered at [0, 0]
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Fetch vehicle location data (replace with your actual API call)
+    fetch('/api/vehicle_location/{{ vehicle_id }}/')
+      .then(response => response.json())
+      .then(locationData => {
+        // Add a marker for the vehicle's location
+        var marker = L.marker([locationData.latitude, locationData.longitude]).addTo(map);
+        marker.bindPopup("<b>" + locationData.vehicle_name + "</b>").openPopup();
+      });
+  </script>
+</div>
+
+{% endblock content %}
